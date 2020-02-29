@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tuuturu/styling.git"
+    "url": "git@github.com:oslokommune/tp-styling.git"
   },
   "author": "Julius Pedersen <deifyed@ctemplar.com>",
   "license": "GPL-3.0-or-later",
