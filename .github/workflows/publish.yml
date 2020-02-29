@@ -25,22 +25,12 @@ jobs:
       with:
         node-version: '12.x'
         registry-url: 'https://npm.pkg.github.com'
-        scope: '@tuuturu' # Defaults to the user or organization that owns the workflow file
+        scope: '@oslokommune' # Defaults to the user or organization that owns the workflow file
     - run: make install
     - run: make build
     - run: make publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Notify Vue
-      uses: peter-evans/repository-dispatch@v1.0.0
-      with:
-        # A repo scoped GitHub Personal Access Token
-        token: ${{ secrets.VUE_NOTIFIER }}
-        # The full name of the repository to send the dispatch. Defaults to the current repository.
-        repository: tuuturu/vue
-        # A custom webhook event name.
-        event-type: build_application
 
   bump:
     needs: publish
